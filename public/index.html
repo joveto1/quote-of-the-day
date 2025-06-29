@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quote of the Day</title>
+  <script>
+    async function getQuote() {
+      const response = await fetch('/api/quote');
+      const data = await response.json();
+      document.getElementById('quote').innerText = data.quote;
+    }
+    window.onload = getQuote;
+  </script>
+</head>
+<body>
+  <h1>Quote of the Day</h1>
+  <p id="quote">Loading...</p>
+  <button onclick="getQuote()">New Quote</button>
+</body>
+</html>
