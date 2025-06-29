@@ -1,0 +1,13 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: joveto1/devops-framework/.github/workflows/node-build.yml@main
