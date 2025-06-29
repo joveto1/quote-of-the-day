@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
@@ -11,3 +11,9 @@ on:
 jobs:
   build:
     uses: joveto1/devops-framework/.github/workflows/node-build.yml@main
+
+  docker:
+    uses: joveto1/devops-framework/.github/workflows/docker-build-push.yml@main
+    needs: build
+    with:
+      image-name: quote-of-the-day
